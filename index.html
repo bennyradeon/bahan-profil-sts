@@ -327,21 +327,21 @@
             </div>
 
             <div class="preview-window">
-                <iframe id="previewFrame2"></iframe>
+                <iframe id="previewFrame3"></iframe>
             </div>
         </section>
 
-        <!-- Desain 3 -->
+        <!-- Desain 4 -->
         <section class="template-card">
             <div class="template-info">
-                <h2>03. Neubrutalism Profile</h2>
-                <p>Salin kode di bawah ini untuk mendapatkan desain profil gaya Neubrutalism.</p>
+                <h2>04. Stylish Identity Profile</h2>
+                <p>Salin kode di bawah ini untuk mendapatkan desain profil gaya stylish identity.</p>
             </div>
 
             <div class="code-window">
                 <div class="code-top-bar">
                     <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                    <span style="font-size: 0.7rem; color: #94a3b8;">neubrutalism_profile.html</span>
+                    <span style="font-size: 0.7rem; color: #94a3b8;">stylish_identity_profile.html</span>
                 </div>
                 <textarea class="code-area" readonly>
 <!DOCTYPE html>
@@ -349,74 +349,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Ben | Neubrutalism</title>
+    <title>Ben | Stylish Identity</title>
     <style>
-        body { background: #ffde03; font-family: 'Arial Black', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        
-        .nb-card {
-            background: #fff;
-            border: 4px solid #000;
-            box-shadow: 10px 10px 0px #000;
-            width: 330px;
-            padding: 30px;
-            transform: rotate(-2deg);
-            transition: 0.2s;
+        /* Menggunakan font yang elegan dari Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,700&family=Inter:wght@300;400;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f3f3f1; /* Warna kertas premium */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
         }
 
-        .nb-card:hover { transform: rotate(0deg) scale(1.02); }
+        .main-container {
+            position: relative;
+            width: 380px;
+            padding: 40px;
+        }
 
-        .nb-photo {
+        /* Elemen dekoratif angka kelas di latar belakang */
+        .bg-number {
+            position: absolute;
+            font-size: 10rem;
+            font-weight: 800;
+            color: #ebebe9;
+            top: -20px;
+            right: 0;
+            z-index: -1;
+            line-height: 1;
+        }
+
+        /* Frame Foto Stylish */
+        .image-wrapper {
+            position: relative;
             width: 100%;
-            height: 200px;
-            border: 4px solid #000;
+            height: 400px;
+            background-color: #e0e0e0;
+            margin-bottom: 30px;
+            box-shadow: 20px 20px 60px #d9d9d7, -20px -20px 60px #ffffff;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            margin-bottom: 20px;
-            background: #4ecdc4;
+            filter: sepia(0.2) contrast(1.1); /* Efek vintage stylish */
         }
 
-        .nb-name {
-            background: #ff6b6b;
-            color: white;
-            display: inline-block;
-            padding: 5px 15px;
-            border: 3px solid #000;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-
-        .nb-info {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #000;
-        }
-
-        .nb-info b { display: block; margin-top: 10px; text-transform: uppercase; border-bottom: 2px solid #000; width: fit-content; }
-
-        .nb-btn {
-            margin-top: 25px;
-            display: block;
-            text-align: center;
-            background: #000;
+        /* Label Melayang */
+        .float-label {
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            background: #1a1a1a;
             color: #fff;
-            padding: 12px;
-            text-decoration: none;
+            padding: 8px 20px;
+            font-size: 0.7rem;
             font-weight: bold;
-            border: 2px solid #000;
+            letter-spacing: 2px;
+            transform: rotate(-90deg) translateX(-100%);
+            transform-origin: left top;
         }
-        .nb-btn:hover { background: #fff; color: #000; }
+
+        /* Konten Teks */
+        .content h1 {
+            font-family: 'Bodoni Moda', serif; /* Font majalah */
+            font-size: 3.5rem;
+            font-style: italic;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .school-info {
+            font-weight: 800;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #555;
+            border-bottom: 2px solid #1a1a1a;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .contact-details span {
+            display: block;
+            color: #888;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-details p {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* Garis Dekoratif */
+        .line {
+            width: 50px;
+            height: 5px;
+            background: #1a1a1a;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="nb-card">
-        <img src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?auto=format&w=600" class="nb-photo">
-        <div class="nb-name">BEN</div>
-        <div class="nb-info">
-            <b>Sekolah:</b> SMATRAGA
-            <b>Kelas:</b> XI INFOR 4
-            <b>Kontak:</b> 08123456789
-            <b>Email:</b> email@siswa.petra
+
+    <div class="main-container">
+        <div class="bg-number">11</div>
+        
+        <div class="image-wrapper">
+            <div class="float-label">INFORMATIKA</div>
+            <img src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?auto=format&w=600" alt="Ben Profile">
         </div>
-        <a href="tel:08123456789" class="nb-btn">HUBUNGI SEKARANG!</a>
+
+        <div class="content">
+            <div class="line"></div>
+            <p class="school-info">SMATRAGA SURABAYA</p>
+            <h1>Ben.</h1>
+            <p style="font-size: 0.8rem; color: #777; margin-top: 10px;">
+                Class XI INFOR 4 — Digital Creator & Tech Enthusiast
+            </p>
+
+            <div class="contact-details">
+                <span>Phone Connection</span>
+                <p>08123456789</p>
+
+                <span>Digital Correspondence</span>
+                <p>email@siswa.petra</p>
+            </div>
+        </div>
     </div>
 
 </body>
@@ -425,7 +501,7 @@
             </div>
 
             <div class="preview-window">
-                <iframe id="previewFrame3"></iframe>
+                <iframe id="previewFrame4"></iframe>
             </div>
         </section>
 
@@ -465,6 +541,17 @@
             iframeDoc3.close();
         };
 
+        // Menambahkan konten dari textarea ke dalam iframe untuk desain 4
+        const iframe4 = document.getElementById('previewFrame4');
+        const codeArea4 = document.querySelectorAll('.code-area')[3];
+
+        iframe4.onload = function() {
+            const iframeDoc4 = iframe4.contentDocument || iframe4.contentWindow.document;
+            iframeDoc4.open();
+            iframeDoc4.write(codeArea4.value);
+            iframeDoc4.close();
+        };
+
         window.onload = function() {
             // Memastikan iframe pertama tampil setelah halaman dimuat
             const iframeDoc1 = iframe1.contentDocument || iframe1.contentWindow.document;
@@ -483,6 +570,12 @@
             iframeDoc3.open();
             iframeDoc3.write(codeArea3.value);
             iframeDoc3.close();
+
+            // Memastikan iframe keempat tampil setelah halaman dimuat
+            const iframeDoc4 = iframe4.contentDocument || iframe4.contentWindow.document;
+            iframeDoc4.open();
+            iframeDoc4.write(codeArea4.value);
+            iframeDoc4.close();
         }
     </script>
 
