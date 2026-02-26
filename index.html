@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMATRAGA IT HUB | Source Code Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --accent: #22d3ee;
+            --dark-bg: #0b0f1a;
+            --card-bg: #161e2d;
+            --text-main: #ffffff;
+            --text-dim: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--dark-bg); 
+            color: var(--text-main); 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            padding-bottom: 100px;
+        }
+
+        header { padding: 80px 5% 40px; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        header h1 span { color: var(--accent); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        .template-card {
+            background: var(--card-bg);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 80px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .template-info { margin-bottom: 30px; border-left: 5px solid var(--primary); padding-left: 20px; }
+        .template-info h2 { color: var(--accent); font-size: 1.8rem; }
+
+        .code-window {
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #2d3748;
+            margin-bottom: 40px;
+        }
+
+        .code-top-bar {
+            background: #1e293b;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dots { display: flex; gap: 8px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+        .code-area {
+            width: 100%;
+            height: 350px;
+            padding: 20px;
+            background: #000;
+            color: #a5b4fc;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            border: none;
+            outline: none;
+            resize: none;
+            white-space: pre;
+            line-height: 1.6;
+        }
+
+        .preview-window {
+            background: #f1f5f9;
+            border-radius: 20px;
+            height: 600px;
+            width: 100%;
+            border: 3px solid #334155;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SMATRAGA <span>SOURCE HUB</span></h1>
+        <p>Resource Portofolio Digital XI INFOR 4</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Desain 1 -->
+        <section class="template-card">
+            <div class="template-info">
+                <h2>01. Interactive Glass Profile</h2>
+                <p>Salin kode di bawah ini untuk mendapatkan desain profil gaya kaca interaktif.</p>
+            </div>
+
+            <div class="code-window">
+                <div class="code-top-bar">
+                    <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span style="font-size: 0.7rem; color: #94a3b8;">interactive_glass.html</span>
+                </div>
+                <textarea class="code-area" readonly>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben | Interactive Profile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-card {
+            width: 380px; padding: 40px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px); border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.05), inset 5px 5px 10px rgba(255, 255, 255, 0.5);
+            text-align: center; transition: 0.4s ease;
+        }
+        .glass-card:hover { transform: translateY(-10px) scale(1.02); background: rgba(255, 255, 255, 0.5); }
+        .profile-wrapper { position: relative; width: 150px; height: 150px; margin: 0 auto 30px; }
+        .profile-img {
+            width: 100%; height: 100%; border-radius: 50px; object-fit: cover;
+            box-shadow: 10px 10px 20px rgba(163, 177, 198, 0.6), -10px -10px 20px rgba(255, 255, 255, 1);
+            border: 5px solid rgba(255, 255, 255, 0.8);
+        }
+        .school-label { font-size: 0.75rem; font-weight: 800; color: #6366f1; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+        h1 { font-size: 2.2rem; font-weight: 800; color: #1e293b; margin-bottom: 5px; }
+        .class-tag { font-size: 0.9rem; color: #64748b; margin-bottom: 30px; display: block; }
+        .contact-btn {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 15px 25px; margin-bottom: 15px; background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 20px;
+            color: #1e293b; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.8); transition: 0.2s;
+        }
+        .contact-btn:hover { box-shadow: inset 3px 3px 6px rgba(163, 177, 198, 0.4), inset -3px -3px 6px rgba(255, 255, 255, 0.8); transform: scale(0.98); }
+        .footer-text { font-size: 0.7rem; color: #94a3b8; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="glass-card">
+        <div class="profile-wrapper">
+            <img src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?auto=format&w=600" alt="Ben Profile" class="profile-img">
+        </div>
+        <span class="school-label">SMATRAGA</span>
+        <h1>Ben</h1>
+        <span class="class-tag">XI INFOR 4</span>
+        <a href="#" class="contact-btn"><b>08123456789</b><span>📱</span></a>
+        <a href="#" class="contact-btn"><b>email@siswa.petra</b><span>📧</span></a>
+        <p class="footer-text">ACTIVE MEMBER • INFORMATIKA 2026</p>
+    </div>
+</body>
+</html>
+                </textarea>
+            </div>
+
+            <div class="preview-window">
+                <iframe id="previewFrame1"></iframe>
+            </div>
+        </section>
+
+        <!-- Desain 2 -->
+        <section class="template-card">
+            <div class="template-info">
+                <h2>02. Split Style Profile</h2>
+                <p>Salin kode di bawah ini untuk mendapatkan desain profil gaya split style.</p>
+            </div>
+
+            <div class="code-window">
+                <div class="code-top-bar">
+                    <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span style="font-size: 0.7rem; color: #94a3b8;">split_style_profile.html</span>
+                </div>
+                <textarea class="code-area" readonly>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Ben | Split Style</title>
+    <style>
+        :root { --accent: #ff3e00; --dark: #111; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        
+        body { background: var(--dark); color: #fff; overflow: hidden; }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            align-items: center;
+        }
+
+        .left-side {
+            flex: 1;
+            height: 100%;
+            position: relative;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-img {
+            width: 80%;
+            height: 70%;
+            object-fit: cover;
+            filter: grayscale(1) brightness(0.8);
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+
+        .left-side:hover .main-img {
+            filter: grayscale(0) brightness(1);
+            transform: scale(1.02);
+        }
+
+        .big-text {
+            position: absolute;
+            font-size: 12vw;
+            font-weight: 900;
+            line-height: 0.8;
+            left: 50%;
+            bottom: 10%;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+            pointer-events: none;
+        }
+
+        .right-side {
+            flex: 1;
+            padding: 0 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tag {
+            background: var(--accent);
+            color: #fff;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            width: fit-content;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        h1 { font-size: 4rem; margin-bottom: 10px; letter-spacing: -2px; }
+        h2 { font-size: 1.2rem; color: var(--accent); margin-bottom: 40px; }
+
+        .contact-info { border-left: 2px solid #333; padding-left: 20px; }
+        .info-item { margin-bottom: 20px; }
+        .info-item small { color: #666; display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; }
+        .info-item p { font-size: 1.1rem; margin-top: 5px; }
+
+        .footer-link {
+            margin-top: 40px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-link:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; overflow-y: auto; }
+            .left-side { height: 50vh; width: 100%; }
+            .right-side { padding: 50px 20px; }
+            .big-text { font-size: 20vw; bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?auto=format&w=600" alt="Ben" class="main-img">
+            <div class="big-text">BEN1</div>
+        </div>
+
+        <div class="right-side">
+            <div class="tag">XI INFOR 4</div>
+            <h1>BEN2</h1>
+            <h2>SMATRAGA SURABAYA</h2>
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <small>Direct Line</small>
+                    <p>08123456789</p>
+                </div>
+                <div class="info-item">
+                    <small>Official Email</small>
+                    <p>email@siswa.petra</p>
+                </div>
+            </div>
+
+            <a href="mailto:email@siswa.petra" class="footer-link">
+                CONTACT ME <span>&rarr;</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
+                </textarea>
+            </div>
+
+            <div class="preview-window">
+                <iframe id="previewFrame2"></iframe>
+            </div>
+        </section>
+
+        <!-- Desain 3 -->
+        <section class="template-card">
+            <div class="template-info">
+                <h2>03. Neubrutalism Profile</h2>
+                <p>Salin kode di bawah ini untuk mendapatkan desain profil gaya Neubrutalism.</p>
+            </div>
+
+            <div class="code-window">
+                <div class="code-top-bar">
+                    <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span style="font-size: 0.7rem; color: #94a3b8;">neubrutalism_profile.html</span>
+                </div>
+                <textarea class="code-area" readonly>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Ben | Neubrutalism</title>
+    <style>
+        body { background: #ffde03; font-family: 'Arial Black', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        
+        .nb-card {
+            background: #fff;
+            border: 4px solid #000;
+            box-shadow: 10px 10px 0px #000;
+            width: 330px;
+            padding: 30px;
+            transform: rotate(-2deg);
+            transition: 0.2s;
+        }
+
+        .nb-card:hover { transform: rotate(0deg) scale(1.02); }
+
+        .nb-photo {
+            width: 100%;
+            height: 200px;
+            border: 4px solid #000;
+            object-fit: cover;
+            margin-bottom: 20px;
+            background: #4ecdc4;
+        }
+
+        .nb-name {
+            background: #ff6b6b;
+            color: white;
+            display: inline-block;
+            padding: 5px 15px;
+            border: 3px solid #000;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .nb-info {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #000;
+        }
+
+        .nb-info b { display: block; margin-top: 10px; text-transform: uppercase; border-bottom: 2px solid #000; width: fit-content; }
+
+        .nb-btn {
+            margin-top: 25px;
+            display: block;
+            text-align: center;
+            background: #000;
+            color: #fff;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #000;
+        }
+        .nb-btn:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+    <div class="nb-card">
+        <img src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?auto=format&w=600" class="nb-photo">
+        <div class="nb-name">BEN</div>
+        <div class="nb-info">
+            <b>Sekolah:</b> SMATRAGA
+            <b>Kelas:</b> XI INFOR 4
+            <b>Kontak:</b> 08123456789
+            <b>Email:</b> email@siswa.petra
+        </div>
+        <a href="tel:08123456789" class="nb-btn">HUBUNGI SEKARANG!</a>
+    </div>
+
+</body>
+</html>
+                </textarea>
+            </div>
+
+            <div class="preview-window">
+                <iframe id="previewFrame3"></iframe>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Menambahkan konten dari textarea ke dalam iframe untuk desain 1
+        const iframe1 = document.getElementById('previewFrame1');
+        const codeArea1 = document.querySelector('.code-area');
+
+        iframe1.onload = function() {
+            const iframeDoc1 = iframe1.contentDocument || iframe1.contentWindow.document;
+            iframeDoc1.open();
+            iframeDoc1.write(codeArea1.value);
+            iframeDoc1.close();
+        };
+
+        // Menambahkan konten dari textarea ke dalam iframe untuk desain 2
+        const iframe2 = document.getElementById('previewFrame2');
+        const codeArea2 = document.querySelectorAll('.code-area')[1];
+
+        iframe2.onload = function() {
+            const iframeDoc2 = iframe2.contentDocument || iframe2.contentWindow.document;
+            iframeDoc2.open();
+            iframeDoc2.write(codeArea2.value);
+            iframeDoc2.close();
+        };
+
+        // Menambahkan konten dari textarea ke dalam iframe untuk desain 3
+        const iframe3 = document.getElementById('previewFrame3');
+        const codeArea3 = document.querySelectorAll('.code-area')[2];
+
+        iframe3.onload = function() {
+            const iframeDoc3 = iframe3.contentDocument || iframe3.contentWindow.document;
+            iframeDoc3.open();
+            iframeDoc3.write(codeArea3.value);
+            iframeDoc3.close();
+        };
+
+        window.onload = function() {
+            // Memastikan iframe pertama tampil setelah halaman dimuat
+            const iframeDoc1 = iframe1.contentDocument || iframe1.contentWindow.document;
+            iframeDoc1.open();
+            iframeDoc1.write(codeArea1.value);
+            iframeDoc1.close();
+            
+            // Memastikan iframe kedua tampil setelah halaman dimuat
+            const iframeDoc2 = iframe2.contentDocument || iframe2.contentWindow.document;
+            iframeDoc2.open();
+            iframeDoc2.write(codeArea2.value);
+            iframeDoc2.close();
+
+            // Memastikan iframe ketiga tampil setelah halaman dimuat
+            const iframeDoc3 = iframe3.contentDocument || iframe3.contentWindow.document;
+            iframeDoc3.open();
+            iframeDoc3.write(codeArea3.value);
+            iframeDoc3.close();
+        }
+    </script>
+
+</body>
+</html>
